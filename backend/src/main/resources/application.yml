@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:sqlite:./morada.db}
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  viacep:
+    base-url: ${VIACEP_BASE_URL:http://viacep.com.br/ws}
+  jwt:
+    secret: ${JWT_SECRET:morada-chave-local-desenvolvimento}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:480}
+  admin:
+    name: ${ADMIN_NAME:Vinicius Arruda}
+    cpf: ${ADMIN_CPF:18114967765}
+    birth-date: ${ADMIN_BIRTH_DATE:1990-01-01}
+    password: ${ADMIN_PASSWORD:admin123}

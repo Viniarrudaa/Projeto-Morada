@@ -1,0 +1,28 @@
+services:
+  morada-api:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: jdbc:sqlite:/app/data/morada.db
+      JWT_SECRET: morada-chave-local-desenvolvimento
+      VIACEP_BASE_URL: http://viacep.com.br/ws
+      ADMIN_NAME: "Vinicius Arruda"
+      ADMIN_CPF: "18114967765"
+      ADMIN_PASSWORD: "admin123"
+    ports:
+      - "8080:8080"
+    volumes:
+      - morada-data:/app/data
+
+  morada-web:
+    build:
+      context: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8080/api
+    ports:
+      - "5173:5173"
+    depends_on:
+      - morada-api
+
+volumes:
+  morada-data:

@@ -1,0 +1,4 @@
+target/
+data/
+morada.db
+*.log

@@ -1,0 +1,602 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f5f6f3;
+  color: #18201e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    linear-gradient(180deg, rgba(12, 113, 91, 0.07), transparent 260px),
+    #f5f6f3;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.64;
+}
+
+input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #ccd7d2;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #18201e;
+  padding: 0 12px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #087f6d;
+  box-shadow: 0 0 0 3px rgba(8, 127, 109, 0.13);
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: #4b5b56;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.morada-portaria {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.morada-acesso {
+  width: min(100%, 420px);
+  background: #ffffff;
+  border: 1px solid #dce4df;
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 18px 52px rgba(34, 51, 45, 0.1);
+}
+
+.morada-acesso-cabecalho {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.morada-selo-app {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #c9ddd7;
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #087f6d;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.morada-acesso-cabecalho h1,
+.morada-ficha-morador h1,
+.morada-titulo-secao h2,
+.morada-formulario-morador h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.morada-acesso-cabecalho h1 {
+  font-size: 1.8rem;
+  line-height: 1.15;
+}
+
+.morada-acesso-cabecalho p {
+  margin: 0;
+  color: #60716c;
+}
+
+.morada-seletor-acesso,
+.morada-seletor-perfil {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  min-height: 42px;
+  margin-bottom: 18px;
+  border: 1px solid #d7e1dc;
+  border-radius: 8px;
+  padding: 4px;
+  background: #eef3f0;
+}
+
+.morada-opcao-acesso,
+.morada-opcao-perfil {
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #4d5e59;
+  font-weight: 700;
+}
+
+.morada-opcao-acesso--ativa,
+.morada-opcao-perfil--ativa {
+  background: #ffffff;
+  color: #087f6d;
+  box-shadow: 0 1px 8px rgba(30, 53, 47, 0.1);
+}
+
+.morada-seletor-perfil {
+  margin-bottom: 0;
+}
+
+.morada-opcao-perfil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.morada-formulario-acesso {
+  display: grid;
+  gap: 14px;
+}
+
+.morada-formulario-morador {
+  border-top: 1px solid #dde6e1;
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.morada-botao-acesso,
+.morada-botao-criar-morador,
+.morada-botao-cancelar-endereco,
+.morada-botao-salvar-endereco,
+.morada-botao-sair,
+.morada-botao-endereco {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border-radius: 6px;
+  font-weight: 750;
+}
+
+.morada-botao-acesso,
+.morada-botao-salvar-endereco {
+  color: #ffffff;
+  background: #087f6d;
+  padding: 0 16px;
+}
+
+.morada-botao-acesso:hover,
+.morada-botao-salvar-endereco:hover {
+  background: #066b5c;
+}
+
+.morada-botao-salvar-endereco {
+  min-height: 38px;
+}
+
+.morada-botao-criar-morador {
+  color: #103f39;
+  background: #dceee8;
+  padding: 0 14px;
+}
+
+.morada-botao-cancelar-endereco {
+  color: #41514c;
+  background: #eef3f0;
+  padding: 0 12px;
+}
+
+.morada-botao-sair,
+.morada-botao-endereco {
+  width: 42px;
+  min-width: 42px;
+  color: #40524d;
+  background: #eef3f0;
+}
+
+.morada-botao-sair:hover,
+.morada-botao-endereco:hover {
+  color: #087f6d;
+  background: #dbeee8;
+}
+
+.morada-botao-remover-endereco:hover {
+  color: #b42318;
+  background: #fde8e5;
+}
+
+.morada-aviso-formulario {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.morada-painel-logado {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.morada-barra-sessao {
+  max-width: 1180px;
+  margin: 0 auto 18px;
+  min-height: 64px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #dbe5e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.morada-simbolo-localizacao {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #087f6d;
+}
+
+.morada-assinatura-painel {
+  display: grid;
+  gap: 2px;
+}
+
+.morada-assinatura-painel strong {
+  font-size: 1.05rem;
+}
+
+.morada-assinatura-painel span {
+  color: #647570;
+  font-size: 0.9rem;
+}
+
+.morada-jornada-cadastros {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.morada-diretorio-moradores,
+.morada-painel-cadastro {
+  background: #ffffff;
+  border: 1px solid #dbe5e0;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.morada-diretorio-moradores {
+  position: sticky;
+  top: 18px;
+}
+
+.morada-painel-cadastro {
+  display: grid;
+  gap: 18px;
+}
+
+.morada-titulo-secao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #24443d;
+  margin-bottom: 14px;
+}
+
+.morada-titulo-secao h2,
+.morada-formulario-morador h3 {
+  font-size: 1rem;
+}
+
+.morada-gestao-moradores {
+  display: grid;
+  gap: 12px;
+}
+
+.morada-lista-moradores {
+  display: grid;
+  gap: 6px;
+  max-height: 320px;
+  overflow: auto;
+  padding-right: 3px;
+}
+
+.morada-morador-linha {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: #f6f8f6;
+  color: #263631;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.morada-morador-linha--selecionado {
+  border-color: #9ecfc4;
+  background: #e9f6f2;
+}
+
+.morada-morador-linha span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.morada-morador-linha small {
+  color: #6a7b76;
+}
+
+.morada-ficha-morador {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dfe7e3;
+}
+
+.morada-rotulo-ficha {
+  display: block;
+  color: #087f6d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.morada-ficha-morador h1 {
+  margin-top: 3px;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.morada-dados-morador {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.morada-dados-morador div {
+  min-width: 118px;
+  border-left: 3px solid #d6e4df;
+  padding-left: 10px;
+}
+
+.morada-dados-morador dt {
+  color: #647570;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.morada-dados-morador dd {
+  margin: 2px 0 0;
+  color: #263631;
+  font-weight: 750;
+}
+
+.morada-selo-perfil {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.morada-enderecos-morador {
+  display: grid;
+  gap: 14px;
+}
+
+.morada-formulario-endereco {
+  display: grid;
+  gap: 12px;
+  border: 1px solid #dbe5e0;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fbfcfb;
+}
+
+.morada-campos-endereco {
+  display: grid;
+  grid-template-columns: 160px 140px minmax(180px, 1fr);
+  gap: 12px;
+}
+
+.morada-campo-cep {
+  position: relative;
+}
+
+.morada-campo-cep input {
+  padding-right: 38px;
+}
+
+.morada-campo-cep svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #70807b;
+  pointer-events: none;
+}
+
+.morada-previa-cep {
+  min-height: 22px;
+  color: #5c6d68;
+  font-size: 0.92rem;
+}
+
+.morada-rodape-endereco {
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.morada-marca-principal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.morada-marca-principal input {
+  width: 18px;
+  min-height: 18px;
+  accent-color: #087f6d;
+}
+
+.morada-acoes-endereco,
+.morada-controles-endereco {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.morada-lista-enderecos {
+  display: grid;
+  gap: 10px;
+}
+
+.morada-endereco-linha {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #dbe5e0;
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.morada-endereco-corpo {
+  min-width: 0;
+}
+
+.morada-endereco-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.morada-endereco-cabecalho strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.morada-endereco-corpo p,
+.morada-endereco-corpo small,
+.morada-lista-vazia {
+  color: #62736e;
+}
+
+.morada-endereco-corpo p {
+  margin: 5px 0 0;
+}
+
+.morada-endereco-corpo small {
+  display: block;
+  margin-top: 4px;
+}
+
+.morada-selo-principal {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  background: #fff3c7;
+  color: #7a4d00;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.morada-lista-vazia {
+  margin: 0;
+  border: 1px dashed #cad9d3;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .morada-jornada-cadastros {
+    grid-template-columns: 1fr;
+  }
+
+  .morada-diretorio-moradores {
+    position: static;
+  }
+
+  .morada-ficha-morador,
+  .morada-endereco-linha,
+  .morada-rodape-endereco {
+    grid-template-columns: 1fr;
+  }
+
+  .morada-controles-endereco,
+  .morada-acoes-endereco {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .morada-painel-logado {
+    padding: 12px;
+  }
+
+  .morada-barra-sessao {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .morada-assinatura-painel span {
+    display: none;
+  }
+
+  .morada-diretorio-moradores,
+  .morada-painel-cadastro,
+  .morada-acesso {
+    padding: 14px;
+  }
+
+  .morada-campos-endereco {
+    grid-template-columns: 1fr;
+  }
+
+  .morada-dados-morador {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

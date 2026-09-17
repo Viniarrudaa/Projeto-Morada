@@ -1,0 +1,17 @@
+.idea/
+.vscode/
+.DS_Store
+
+backend/target/
+backend/data/
+backend/morada.db
+
+frontend/node_modules/
+frontend/dist/
+frontend/.npm-cache/
+frontend/.env.local
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+*.log
